@@ -1,3 +1,6 @@
+/* ======================================= */
+/* Estilos para Mobile (abordagem "mobile-first") */
+/* ======================================= */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -12,24 +15,24 @@ body {
 .app-container {
     width: 100%;
     max-width: 400px;
-    height: 800px;
+    height: 100vh; /* Ocupa a altura total da tela do celular */
     background: linear-gradient(180deg, rgba(3, 4, 94, 1) 0%, rgba(2, 6, 62, 1) 40%, #000320 60%, #000320 100%);
-    border-radius: 40px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
+    border-radius: 40px; /* Borda arredondada para simular um celular */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .logo-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px;
-    flex-grow: 1;
+    flex-grow: 1; /* Permite que o logo ocupe o espaço disponível */
+    justify-content: center;
 }
 
 .logo-image img {
@@ -62,11 +65,9 @@ body {
     cursor: pointer;
     text-transform: uppercase;
     margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
     transition: transform 0.2s;
-}
-
-.button:hover {
-    transform: scale(1.05);
 }
 
 .primary-button {
@@ -77,4 +78,50 @@ body {
 .secondary-button {
     background-color: transparent;
     color: #0175ff;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+
+/* ======================================= */
+/* Estilos para Desktop (telas a partir de 768px) */
+/* ======================================= */
+@media (min-width: 768px) {
+    .app-container {
+        width: 60%;
+        max-width: 900px;
+        height: auto; /* Altura se ajusta ao conteúdo */
+        min-height: 600px;
+        background: #000320; /* Fundo mais simples para desktop */
+        border-radius: 15px; /* Bordas menos arredondadas */
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+        padding: 50px;
+        margin: 50px auto; /* Centraliza o container */
+    }
+
+    .logo-section {
+        padding-top: 0;
+        margin-top: 0;
+    }
+
+    .logo-image img {
+        width: 200px; /* Logo maior no desktop */
+    }
+
+    .app-name {
+        font-size: 3em; /* Fonte maior no desktop */
+    }
+
+    .buttons-section {
+        padding-top: 30px;
+        padding-bottom: 0;
+    }
+
+    .button {
+        width: 50%; /* Botões mais largos no desktop */
+        padding: 20px;
+        font-size: 1.4em;
+    }
 }
